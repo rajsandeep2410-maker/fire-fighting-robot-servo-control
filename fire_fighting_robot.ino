@@ -1,19 +1,26 @@
 #include <Servo.h>
 
+// IR Sensors
 int leftSensor = 8;
 int centerSensor = 7;
 int rightSensor = 6;
 
+// Motor 1 (Left side)
 int motor1pin1 = 2;
 int motor1pin2 = 3;
+
+// Motor 2 (Right side)
 int motor2pin1 = 4;
 int motor2pin2 = 5;
 
+// Enable pins
 int ENA = 9;
 int ENB = 10;
 
+// Pump (Relay)
 int pumpPin = 11;
 
+// Servo
 Servo nozzle;
 
 void setup() {
@@ -33,6 +40,7 @@ void setup() {
 
   nozzle.attach(12);
 
+  // Speed
   analogWrite(ENA, 200);
   analogWrite(ENB, 200);
 }
@@ -44,44 +52,44 @@ void loop() {
 
   if (left == LOW) {
     // Turn LEFT
-    digitalWrite(motor1pin1, LOW);
-    digitalWrite(motor1pin2, HIGH);
-    digitalWrite(motor2pin1, HIGH);
-    digitalWrite(motor2pin2, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
 
     nozzle.write(150);
-    digitalWrite(pumpPin, HIGH);
+    digitalWrite(11, HIGH);
   }
 
   else if (right == LOW) {
     // Turn RIGHT
-    digitalWrite(motor1pin1, HIGH);
-    digitalWrite(motor1pin2, LOW);
-    digitalWrite(motor2pin1, LOW);
-    digitalWrite(motor2pin2, HIGH);
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, HIGH);
 
     nozzle.write(30);
-    digitalWrite(pumpPin, HIGH);
+    digitalWrite(11, HIGH);
   }
 
   else if (center == LOW) {
-    // Move FORWARD
-    digitalWrite(motor1pin1, HIGH);
-    digitalWrite(motor1pin2, LOW);
-    digitalWrite(motor2pin1, HIGH);
-    digitalWrite(motor2pin2, LOW);
+    // FORWARD
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
 
     nozzle.write(90);
-    digitalWrite(pumpPin, HIGH);
+    digitalWrite(11, HIGH);
   }
 
   else {
     // STOP
-    digitalWrite(motor1pin1, LOW);
-    digitalWrite(motor1pin2, LOW);
-    digitalWrite(motor2pin1, LOW);
-    digitalWrite(motor2pin2, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
 
-    digitalWrite(pumpPin, LOW);
+    digitalWrite(11, LOW);
   }
 }
