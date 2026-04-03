@@ -2,20 +2,20 @@
 
 ## 📌 Overview
 
-This project is an Arduino-based fire fighting robot that detects the direction of fire using IR sensors and autonomously navigates towards it. A servo motor is used to precisely control the direction of water flow for effective fire extinguishing.
+This project presents an Arduino-based autonomous fire fighting robot capable of detecting the direction of fire using IR sensors and navigating towards it. A servo-controlled mechanism is used to precisely direct water flow for effective fire extinguishing.
 
 ---
 
 ## ⚙️ Working Principle
 
-* Three IR sensors (left, center, right) detect direction.
-* Robot movement:
+* Three IR sensors (left, center, right) are used for directional detection.
+* Based on sensor input:
 
-  * Left sensor → turns left
-  * Right sensor → turns right
-  * Center sensor → moves forward
-* Servo motor adjusts nozzle direction.
-* Water pump activates to extinguish fire.
+  * Left sensor → robot turns left
+  * Right sensor → robot turns right
+  * Center sensor → robot moves forward
+* A servo motor adjusts the nozzle orientation to target the fire source.
+* A relay-controlled water pump is activated to extinguish the fire.
 
 ---
 
@@ -32,23 +32,36 @@ This project is an Arduino-based fire fighting robot that detects the direction 
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-* Autonomous navigation
-* Direction-based detection
-* Servo-controlled water targeting
-* Embedded system design
+* Autonomous navigation system
+* Direction-based fire detection
+* Servo-controlled water targeting mechanism
+* PWM-based motor speed control
+* Embedded system implementation
 
 ---
 
+## ⚙️ Key Concepts
+
+* Embedded Systems Design
+* Sensor Interfacing
+* PWM Motor Control
+* Control Systems
+
+---
+
+
+
 ## 🔮 Future Improvements
 
-* Integration of flame sensors for accurate detection
-* Obstacle avoidance system
-* Wireless control via Bluetooth/Wi-Fi
+* Integration of dedicated flame sensors for higher accuracy
+* Obstacle avoidance using ultrasonic sensors
+* Wireless control via Bluetooth or Wi-Fi
+* Real-time monitoring and feedback system
 
 ---
 
 ## 👨‍💻 Author
 
-Sandeep Raj
+**Sandeep Raj**
